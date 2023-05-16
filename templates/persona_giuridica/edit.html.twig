@@ -1,0 +1,32 @@
+{% extends 'footer_template.html.twig' %}
+
+{% block title %}Modifica PersonaGiuridica{% endblock %}
+
+{% block body %}
+    <div class="container-fluid text-center">
+        <div class="container-fluid">
+            <h1>Edit PersonaGiuridica</h1>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-4"></div>
+
+            <div class="col-4">
+                {{ include('persona_giuridica/_form.html.twig', {'button_label': 'Aggiorna'}) }}
+
+                <br>
+               <a href="{{ path('app_persona_giuridica_index') }}">Torna alla lista</a>
+                <br>
+                <br>
+
+                {{ include('persona_giuridica/_delete_form.html.twig') }}
+            </div>
+
+            <div class="col-4"></div>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

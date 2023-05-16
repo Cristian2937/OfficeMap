@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pilota{% endblock %}
+
+{% block body %}
+    <h1>Pilota</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pilotum.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>{{ pilotum.nome }}</td>
+            </tr>
+            <tr>
+                <th>DataNascita</th>
+                <td>{{ pilotum.dataNascita ? pilotum.dataNascita|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pilota_index') }}">back to list</a>
+
+    <a href="{{ path('app_pilota_edit', {'id': pilotum.id}) }}">edit</a>
+
+    {{ include('pilota/_delete_form.html.twig') }}
+{% endblock %}

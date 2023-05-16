@@ -1,0 +1,48 @@
+{#{% extends 'base.html.twig' %}#}
+{% block stylesheets %}
+<style>
+    body{
+        background: #fff;
+    }
+</style>
+{% endblock %}
+{#{% extends 'navbar_template.html.twig' %}#}
+{% extends 'footer_template.html.twig' %}
+{% block hello %}
+    <h1>Benvenuto</h1>
+{% endblock %}
+{% block title %}Pilota index{% endblock %}
+
+{% block body %}
+    <h1>Pilota index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>DataNascita</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pilotum in pilotas %}
+            <tr>
+                <td>{{ pilotum.id }}</td>
+                <td>{{ pilotum.nome }}</td>
+                <td>{{ pilotum.dataNascita ? pilotum.dataNascita|date('d-m-Y') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_pilota_show', {'id': pilotum.id}) }}">show</a>
+                    <a href="{{ path('app_pilota_edit', {'id': pilotum.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pilota_new') }}">Create new</a>
+{% endblock %}

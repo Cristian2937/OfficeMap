@@ -1,0 +1,51 @@
+{% extends 'footer_template.html.twig' %}
+
+
+{% block title %}Registrazione{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="row align-items-center ">
+            <div class="col-4"></div>
+            <div class="col-4 p-5 bg-primary-subtle rounded-3">
+
+                <div class="container-fluid text-center"><h2>Registrati</h2></div>
+                {% form_theme registrationForm 'foundation_5_layout.html.twig' %}
+
+                {{ form_start(registrationForm) }}
+
+                {{ form_row(personaFisicaForm.nome) }}
+                {{ form_row(personaFisicaForm.cognome) }}
+                {{ form_row(personaFisicaForm.codiceFiscale) }}
+                {{ form_row(personaFisicaForm.telefono) }}
+                {{ form_row(personaFisicaForm.dataNascita) }}
+                {{ form_row(personaFisicaForm.luogoNascita) }}
+
+
+                {{ form_row(registrationForm.email) }}
+
+
+                <div class="mt-2">
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }}
+                </div>
+
+
+                {{ form_row(registrationForm.agreeTerms) }}
+
+                <div class="mb-3 ">
+                    <button type="submit" class="btn btn-primary mt-2">Registrati</button>
+                    <a href="{{ path('home') }}" class="justify-content-center">Ritorna alla dashboard</a>
+                </div>
+
+
+                {{ form_end(registrationForm) }}
+            </div>
+
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+{% endblock %}

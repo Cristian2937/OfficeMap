@@ -1,0 +1,73 @@
+    {% extends 'footer_template.html.twig' %}
+
+    {#{% block  stylesheets%}
+        <style>
+            body {
+                background-color: white;
+            }
+        </style>
+    {% endblock %}#}
+
+    {% block title %}Gestisci Persona Giuridica{% endblock %}
+
+
+    {% block center_page %}
+
+
+
+    <!--    <div class="container-fluid">-->
+
+
+            <div class="row align-items-center text-center mb-5">
+    <!--            <div class="container-fluid text-center"> --><h1>Gestione Persona Giuridica</h1> <!--</div>-->
+
+    <!--            <div class="col-3"></div>-->
+                <div class=" align-items-center p-lg-4">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>RagioneSociale</th>
+                            <th>PartitaIva</th>
+                            <th>Telefono</th>
+                            <th>MailAziendale</th>
+                            <th>NomeAzienda</th>
+                            <th>Azioni</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for persona_giuridica in persona_giuridicas %}
+                            <tr>
+                                <td>{{ persona_giuridica.id }}</td>
+                                <td>{{ persona_giuridica.ragioneSociale }}</td>
+                                <td>{{ persona_giuridica.partitaIva }}</td>
+                                <td>{{ persona_giuridica.telefono }}</td>
+                                <td>{{ persona_giuridica.mailAziendale }}</td>
+                                <td>{{ persona_giuridica.nomeAzienda }}</td>
+                                <td>
+    <!--                                <a href="{{ path('app_persona_giuridica_show', {'id': persona_giuridica.id}) }}">show</a>-->
+                                    <a href="{{ path('app_persona_giuridica_edit', {'id': persona_giuridica.id}) }}" class="btn btn-secondary">edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="7">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <div class="d-flex justify-content-around">
+                        <a href="{{ path('app_persona_giuridica_new') }}" class="btn btn-primary">Aggiungi persona Giuridica</a>
+                        <a href="{{ path('home') }}">Ritorna alla home</a>
+                    </div>
+
+                </div>
+
+
+    <!--            <div class="col-3"></div>-->
+            </div>
+
+    <!--    </div>-->
+
+    {% endblock %}

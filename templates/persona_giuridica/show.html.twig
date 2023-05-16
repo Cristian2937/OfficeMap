@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PersonaGiuridica{% endblock %}
+
+{% block body %}
+    <h1>PersonaGiuridica</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ persona_giuridica.id }}</td>
+            </tr>
+            <tr>
+                <th>RagioneSociale</th>
+                <td>{{ persona_giuridica.ragioneSociale }}</td>
+            </tr>
+            <tr>
+                <th>PartitaIva</th>
+                <td>{{ persona_giuridica.partitaIva }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ persona_giuridica.telefono }}</td>
+            </tr>
+            <tr>
+                <th>MailAziendale</th>
+                <td>{{ persona_giuridica.mailAziendale }}</td>
+            </tr>
+            <tr>
+                <th>NomeAzienda</th>
+                <td>{{ persona_giuridica.nomeAzienda }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_persona_giuridica_index') }}">Torna alla lista</a>
+
+    <a href="{{ path('app_persona_giuridica_edit', {'id': persona_giuridica.id}) }}">Modifica</a>
+
+    {{ include('persona_giuridica/_delete_form.html.twig') }}
+{% endblock %}

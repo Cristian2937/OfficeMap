@@ -1,0 +1,32 @@
+{% extends 'footer_template.html.twig' %}
+
+{% block  stylesheets%}
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}New PersonaGiuridica{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="container-fluid text-center">
+            <h1>Create new PersonaGiuridica</h1>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-3"></div>
+            <div class="col-5">
+                {{ include('persona_giuridica/_form.html.twig') }}
+
+                <a href="{{ path('app_persona_giuridica_index') }}">back to list</a>
+            </div>
+            <div class="col-3"></div>
+
+
+        </div>
+    </div>
+
+{% endblock %}

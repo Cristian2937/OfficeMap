@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{#  #}
+{% block navbar %}
+    <nav class="vertical-menu-wrapper">
+        <div class="vertical-menu-logo">
+            <div>{% block mainLogo %}<img id="logo" src="{{ asset('img/links_onlylogo.png') }}" style="width: 38px;height: 38px;" alt="links Managment & Tecnology Spa"><!--Links-->{% endblock %}</div>
+            <span class="open-menu-btn"><hr><hr><hr></span>
+        </div>
+        <ul class="vertical-menu">
+            {# BLOCCO PER EFFETTUARE MODIFICHE AL MENU DELLE OPZIONI #}
+            {# BLOCCO PER EFFETTUARE MODIFICHE AL MENU DELLE OPZIONI #}
+            {% block opzioniNavbar %}
+                {% if app.user %}
+                    <li>{# <i class="fa-sharp fa-solid fa-house"></i> #}<a href="{{ path('home') }}">Home</a></li>
+                    {# <li>Registrazione</li> #}
+
+                    {# CONDIZIONE VALIDA SOLO PER L'UTENTE CON RUOLO ADMIN #}
+                    {% if app.user and is_granted('ROLE_COORD') %}
+                        <li>
+                            <a href="{{ path('app_persona_giuridica_index') }}"
+                               class="{{ is_granted('ROLE_ADMIN') ? '' : 'disabled' }}">Gestisci
+                                Persona Giuridica</a></li>
+                        <li><a href="{{ path('app_utenti') }}">Gestisci Utenti </a></li>
+                        <li><a href="#">Gestisci prenotazioni</a></li>
+                        {#            <li><a href="#">Invio prenotazione</a></li>#}
+                    {% endif %}
+
+                    <!--        <li><a href="#">Invia prenotazione</a></li>-->
+
+                    <li>
+                        <a href="/{{ app.user ? 'logout': 'login' }}">{{ app.user ? 'Logout' : 'Login' }}</a>
+                    </li>
+
+
+                {% else %}
+                    <li>Home</li>
+                    <li><a href="{{ path('app_register') }}">Registrazione</a></li>
+
+                    <li>
+                        <a href="/{{ app.user ? 'logout': 'login' }}">{{ app.user ? 'Logout' : 'Login' }}</a>
+                    </li>
+
+                {% endif %}
+            {% endblock %}
+            {# POSSIBILE RIUTILIZZO #}
+            {#<li id="user-info">MJ<span>online</span></li>#}{#
+            #}{#  - -   -   -   -   -   -   - #}
+        </ul>
+    </nav>
+{% endblock %}
+
+
+

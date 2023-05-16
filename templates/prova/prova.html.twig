@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+
+{% block centro %}
+
+    {% for pers in persone %}
+    {{ pers.nome }}
+    {% endfor %}
+
+{% endblock %}

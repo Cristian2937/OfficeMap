@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Pilota{% endblock %}
+
+{% block body %}
+    <h1>Create new Pilota</h1>
+
+    {{ include('pilota/_form.html.twig') }}
+
+    <a href="{{ path('app_pilota_index') }}">back to list</a>
+{% endblock %}

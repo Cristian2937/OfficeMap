@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utente{% endblock %}
+
+{% block body %}
+    <h1>Utente</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ utente.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ utente.email }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ utente.password }}</td>
+            </tr>
+            <tr>
+                <th>DataUltimoAggiornamento</th>
+                <td>{{ utente.dataUltimoAggiornamento ? utente.dataUltimoAggiornamento|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Stato</th>
+                <td>{{ utente.stato }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_utente_index') }}">back to list</a>
+
+    <a href="{{ path('app_utente_edit', {'id': utente.id}) }}">edit</a>
+
+    {{ include('utente/_delete_form.html.twig') }}
+{% endblock %}

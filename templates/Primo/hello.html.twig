@@ -1,0 +1,101 @@
+{# {% extends 'base.html.twig' %} #}
+{# {% extends 'navbar_template.html.twig' %} #}
+{% extends 'footer_template.html.twig' %}
+
+
+{% block hello %}
+    {% if not app.user %}
+        <h1>Benvenuto utente</h1>
+    {% else %}
+        <h1> Benvenuto {{ app.user.personeFisiche.nome }}</h1>
+    {% endif %}
+{% endblock %}
+
+
+
+{% block center_page %}
+    {% if app.user%}
+        <div class="text-center p-2">
+            <h2> Sezione per effettuare la prenotazione</h2>
+        </div>
+{% else %}
+    <div class="text-center">
+        <h2>Per continurare effettua la <b>registrazione/login</b></h2>
+    </div>
+    {% endif %}
+{% endblock %}
+{# {% block hello %}
+    <h1>Benvenuto UTENTE</h1>
+{% endblock %} #}
+{#
+{% block centro %}
+    <table class="">
+        <thead>
+        <tr>
+            <th>Nome</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for li in lista %}
+            <tr><td>{{ li }}</td></tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %} #}
+
+
+{# SCOMMENTARE IL BLOCCO PER I TEST SUL FOOTER #}
+{#
+{% block footerContext %}
+    <p>
+        Ipsum vero adipisci perferendis dolores deleniti, doloremque repellat, nihil veniam
+        expedita nobis doloribus tenetur at iusto reprehenderit reiciendis distinctio laudantium
+        molestias vel numquam. Modi dolor rerum, dolores excepturi ex ea.
+        Esse ad illum impedit saepe expedita ipsa perspiciatis dicta ut officiis suscipit sed
+        reiciendis quaerat vitae tempore obcaecati, libero corrupti dolores! Quia, perferendis
+        voluptatum aliquid similique ipsa modi iste repudiandae.
+        Ut, unde? Assumenda quasi excepturi nemo corporis culpa iure harum iste sint et velit
+        exercitationem dolorem repellat magnam temporibus laudantium labore, ipsum dolore
+        eveniet totam illum ducimus accusamus neque! At?
+        Sint in reiciendis quaerat quis temporibus omnis, est veritatis non velit numquam
+        incidunt, consectetur quos tempora molestias? Aut, explicabo amet. Esse provident odio
+        amet porro ipsam iure, ratione architecto nulla!
+        Dolor ipsam, fugit non nulla adipisci cum! Commodi soluta vero deserunt quos officia
+        expedita impedit quod maiores praesentium incidunt omnis tempore, vel perferendis dolore
+        nesciunt cupiditate ut ea consectetur? Quaerat.
+        Cum pariatur quibusdam dicta voluptatibus consectetur accusantium molestias labore aut
+        ullam ex fuga facilis commodi ipsam nihil autem odio esse quisquam, ea officia porro?
+        Rem, facilis. Optio quod enim ducimus.
+        Quam at omnis, ullam, accusamus, itaque dignissimos tenetur tempora quas corrupti
+        officiis quisquam quasi animi. Impedit minus consequatur sequi nostrum, assumenda vel
+        expedita fuga fugiat eligendi fugit maxime, maiores ratione.
+        Suscipit at perferendis, tenetur quia quisquam quasi similique, fugit laudantium sunt
+        eveniet a, repudiandae unde facere ducimus quo asperiores maiores architecto tempora ex
+        dolorum cumque ratione voluptas natus? Ea, mollitia.
+        Nobis, impedit voluptatibus deleniti numquam nesciunt ipsa, beatae magnam, quam
+        accusantium labore delectus? Ullam optio nihil in delectus ipsa hic amet odio. Ad quae
+        ab fugit neque sapiente soluta similique!
+        Facilis, excepturi debitis obcaecati delectus velit deleniti? Suscipit fugit ipsam
+        facere tempora in ab autem ipsa mollitia sit asperiores, itaque eaque exercitationem
+        iusto, ex odit quo alias? Modi, saepe corrupti.
+        Dolorem voluptatem voluptatibus dicta quaerat eligendi vel delectus quod voluptatum
+        doloribus? Repellendus reiciendis, explicabo, voluptas aperiam praesentium soluta
+        minima, consequuntur id rerum nam non totam at labore dolor fuga ex.
+        Doloremque ipsum fugiat distinctio neque beatae vitae iusto iste suscipit, minus autem
+        harum aliquid, sapiente soluta, molestiae quidem architecto optio ipsam accusamus
+        consectetur dignissimos doloribus in sunt sit porro. Nisi.
+        Harum cupiditate, fugiat fuga consequatur culpa magni nihil quas odit neque dolore.
+        Impedit, alias quas a eius velit at fuga tempora nesciunt quo quaerat iste nisi quam,
+        culpa sapiente dolorem?
+        Assumenda ut voluptate architecto porro numquam adipisci laborum, nobis, molestiae modi
+        animi voluptates veniam ad similique! Excepturi facilis ad voluptatum consequatur eos
+        quibusdam quaerat minus quo et facere, officia laborum.
+        Mollitia a doloribus, dolore laudantium cumque minima sapiente labore quos dolores et?
+        Dolor iure eveniet quia unde, error ipsa corporis sint asperiores, sequi omnis tempora
+        quis quod praesentium sit accusantium.
+        Laudantium iure velit placeat nulla vitae soluta exercitationem cum quod aliquam, neque
+        dolorum nisi, necessitatibus libero alias esse repellendus obcaecati voluptatem error
+        magnam explicabo veniam tenetur. Expedita vel est eveniet.
+    </p>
+{% endblock %} #}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Pilota{% endblock %}
+
+{% block body %}
+    <h1>Edit Pilota</h1>
+
+    {{ include('pilota/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_pilota_index') }}">back to list</a>
+
+    {{ include('pilota/_delete_form.html.twig') }}
+{% endblock %}

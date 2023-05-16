@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Welcome! {% endblock %}|OfficeMap</title>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {#<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/sidebar.css') }}">#}
+    <!-- FONT AWESOME CDN -->
+    <script src="https://kit.fontawesome.com/59e06ca70f.js" crossorigin="anonymous"></script>
+
+    {% block stylesheets %}
+
+       <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/sidebar.css') }}">
+
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+
+</head>
+
+<body>
+ {% block body %}
+
+{# LA CLASSE wrapper FA DA SUPER CONTENITORE PER TUTTI GLI ELEMENTI DEL BODY #}
+<div id="content-wrapper" class="d-flex flex-column">
+    <div class="wrapper">
+
+        <header>
+            {% block navbar %}{% endblock %}
+        </header>
+
+
+        <div class="content-wrapper">
+            <div class="content">
+
+                <div id="app"></div>
+
+                <div class="container-fluid border-bottom">
+
+                    {% block hello %}{% endblock %}
+                </div>
+                <div class="{#ligthgray#} padding-top">
+                    <div class="container-fluid">
+                        {% block center_page %}
+                            <div class="row justify-content-center">
+                                <div class="col{#col-lg-6#} mb-4 col-lg-10">
+                                    <div class="  <!--border-left-dodgerblue--> margin-bottom">
+                                        {% block centro %}
+                                            <p>
+                                                Benvenuto utente questa è la pagina iniziale della nostra applicazione di prenotazione,
+                                                per effettuare una prenotazione effettui prima la <b>registrazione</b>.
+<!--                                                Ipsum vero adipisci perferendis dolores deleniti, doloremque repellat, nihil veniam
+                                                expedita nobis doloribus tenetur at iusto reprehenderit reiciendis distinctio laudantium
+                                                molestias vel numquam. Modi dolor rerum, dolores excepturi ex ea.
+                                                Esse ad illum impedit saepe expedita ipsa perspiciatis dicta ut officiis suscipit sed
+                                                reiciendis quaerat vitae tempore obcaecati, libero corrupti dolores! Quia, perferendis
+                                                voluptatum aliquid similique ipsa modi iste repudiandae.
+                                                Ut, unde? Assumenda quasi excepturi nemo corporis culpa iure harum iste sint et velit
+                                                exercitationem dolorem repellat magnam temporibus laudantium labore, ipsum dolore
+                                                eveniet totam illum ducimus accusamus neque! At?
+                                                Sint in reiciendis quaerat quis temporibus omnis, est veritatis non velit numquam
+                                                incidunt, consectetur quos tempora molestias? Aut, explicabo amet. Esse provident odio
+                                                amet porro ipsam iure, ratione architecto nulla!
+                                                Dolor ipsam, fugit non nulla adipisci cum! Commodi soluta vero deserunt quos officia
+                                                expedita impedit quod maiores praesentium incidunt omnis tempore, vel perferendis dolore
+                                                nesciunt cupiditate ut ea consectetur? Quaerat.
+                                                Cum pariatur quibusdam dicta voluptatibus consectetur accusantium molestias labore aut
+                                                ullam ex fuga facilis commodi ipsam nihil autem odio esse quisquam, ea officia porro?
+                                                Rem, facilis. Optio quod enim ducimus.
+                                                Quam at omnis, ullam, accusamus, itaque dignissimos tenetur tempora quas corrupti
+                                                officiis quisquam quasi animi. Impedit minus consequatur sequi nostrum, assumenda vel
+                                                expedita fuga fugiat eligendi fugit maxime, maiores ratione.
+                                                Suscipit at perferendis, tenetur quia quisquam quasi similique, fugit laudantium sunt
+                                                eveniet a, repudiandae unde facere ducimus quo asperiores maiores architecto tempora ex
+                                                dolorum cumque ratione voluptas natus? Ea, mollitia.
+                                                Nobis, impedit voluptatibus deleniti numquam nesciunt ipsa, beatae magnam, quam
+                                                accusantium labore delectus? Ullam optio nihil in delectus ipsa hic amet odio. Ad quae
+                                                ab fugit neque sapiente soluta similique!
+                                                Facilis, excepturi debitis obcaecati delectus velit deleniti? Suscipit fugit ipsam
+                                                facere tempora in ab autem ipsa mollitia sit asperiores, itaque eaque exercitationem
+                                                iusto, ex odit quo alias? Modi, saepe corrupti.
+                                                Dolorem voluptatem voluptatibus dicta quaerat eligendi vel delectus quod voluptatum
+                                                doloribus? Repellendus reiciendis, explicabo, voluptas aperiam praesentium soluta
+                                                minima, consequuntur id rerum nam non totam at labore dolor fuga ex.
+                                                Doloremque ipsum fugiat distinctio neque beatae vitae iusto iste suscipit, minus autem
+                                                harum aliquid, sapiente soluta, molestiae quidem architecto optio ipsam accusamus
+                                                consectetur dignissimos doloribus in sunt sit porro. Nisi.
+                                                Harum cupiditate, fugiat fuga consequatur culpa magni nihil quas odit neque dolore.
+                                                Impedit, alias quas a eius velit at fuga tempora nesciunt quo quaerat iste nisi quam,
+                                                culpa sapiente dolorem?
+                                                Assumenda ut voluptate architecto porro numquam adipisci laborum, nobis, molestiae modi
+                                                animi voluptates veniam ad similique! Excepturi facilis ad voluptatum consequatur eos
+                                                quibusdam quaerat minus quo et facere, officia laborum.
+                                                Mollitia a doloribus, dolore laudantium cumque minima sapiente labore quos dolores et?
+                                                Dolor iure eveniet quia unde, error ipsa corporis sint asperiores, sequi omnis tempora
+                                                quis quod praesentium sit accusantium.
+                                                Laudantium iure velit placeat nulla vitae soluta exercitationem cum quod aliquam, neque
+                                                dolorum nisi, necessitatibus libero alias esse repellendus obcaecati voluptatem error
+                                                magnam explicabo veniam tenetur. Expedita vel est eveniet.-->
+                                            </p>
+                                        {% endblock %}
+                                    </div>
+                                    {% block contenuti %}
+                                    {% endblock %}
+
+                                </div>
+
+                            </div>
+                        {% endblock %}
+                    </div>
+                </div>
+
+            </div>
+                <div id="sticky-footer">
+                    <footer >
+                        {% block footer %}{% endblock %}
+                    </footer>
+                </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+ {% endblock %}
+
+ {% block javascripts %}
+     {{ encore_entry_script_tags('app') }}
+     <script src="{{ asset('assets/js/sidebar.js') }}"></script>
+ {% endblock %}
+{# E' POSSIBILE INSERIRE SCRIPT JS NEL METODO CLASSICO #}
+{#<script src=""></script>#}
+{#<script src="{{ asset('assets/js/sidebar.js') }}"></script>#}
+</body>
+</html>
